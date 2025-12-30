@@ -1,3 +1,6 @@
+/* =========================
+   GLOBAL STYLES
+========================= */
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
@@ -11,27 +14,52 @@ body {
   height: 100%;
 }
 
+/* =========================
+   SCREEN LAYOUT
+========================= */
 .screen {
   display: none;
   height: 100vh;
   padding: 40px 20px;
   text-align: center;
+  animation: fadeIn 0.8s ease-in-out;
 }
 
 .screen.active {
   display: block;
 }
 
+/* =========================
+   HEADINGS & TEXT
+========================= */
 h1 {
   font-size: 26px;
   margin-bottom: 20px;
 }
 
+p {
+  line-height: 1.6;
+}
+
 .year {
   font-size: 60px;
   color: gold;
+  animation: glow 1.5s infinite alternate;
 }
 
+/* Glow effect for 2026 */
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px gold;
+  }
+  to {
+    text-shadow: 0 0 25px gold;
+  }
+}
+
+/* =========================
+   BUTTONS
+========================= */
 button {
   margin-top: 30px;
   padding: 14px 30px;
@@ -40,26 +68,55 @@ button {
   background: #ff4d4d;
   color: white;
   font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+button:hover {
+  transform: scale(1.08);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+/* =========================
+   CHECKLIST
+========================= */
 .checklist {
   list-style: none;
   padding: 0;
 }
 
+.checklist li {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+/* =========================
+   CARDS
+========================= */
 .card {
   background: white;
   padding: 15px;
   margin: 10px auto;
-  width: 80%;
-  border-radius: 10px;
+  width: 85%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
+/* =========================
+   NIGHT SCREEN (2026)
+========================= */
 .night {
-  background: radial-gradient(#1a2a6c, #000);
+  background: radial-gradient(circle at top, #1a2a6c, #000);
   color: white;
 }
 
+/* =========================
+   FLIP CARDS
+========================= */
 .flip-card {
   width: 220px;
   height: 140px;
@@ -70,7 +127,7 @@ button {
 .flip-inner {
   width: 100%;
   height: 100%;
-  transition: transform 0.6s;
+  transition: transform 0.6s ease;
   transform-style: preserve-3d;
 }
 
@@ -78,34 +135,86 @@ button {
   transform: rotateY(180deg);
 }
 
-.front, .back {
+.front,
+.back {
   position: absolute;
   width: 100%;
   height: 100%;
   background: white;
-  border-radius: 10px;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
   backface-visibility: hidden;
+  padding: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
 .back {
   transform: rotateY(180deg);
 }
 
+/* =========================
+   MUSIC BUTTON
+========================= */
 #musicBtn {
   position: fixed;
   bottom: 20px;
   right: 20px;
   background: black;
   color: white;
-}
-/* Screen animation */
-.screen {
-  animation: fadeIn 0.8s ease-in-out;
+  z-index: 10;
 }
 
+/* =========================
+   PHOTO GALLERY
+========================= */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-top: 25px;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.07);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* =========================
+   CONFETTI FALL
+========================= */
+@keyframes fall {
+  to {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+/* =========================
+   SNOW & FIREWORKS CANVAS
+========================= */
+#snow,
+#fireworks {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* IMPORTANT */
+  z-index: 0;
+}
+
+/* =========================
+   FADE IN ANIMATION
+========================= */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -117,36 +226,19 @@ button {
   }
 }
 
-/* Button hover animation */
-button {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
+/* =========================
+   MOBILE OPTIMIZATION
+========================= */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 22px;
+  }
 
-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-}
-/* Photo Gallery */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-  margin-top: 20px;
-}
+  .year {
+    font-size: 48px;
+  }
 
-.gallery img {
-  width: 100%;
-  border-radius: 14px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-  transition: transform 0.3s ease;
-}
-
-.gallery img:hover {
-  transform: scale(1.05);
-}
-@keyframes fall {
-  to {
-    transform: translateY(100vh);
-    opacity: 0;
+  .gallery {
+    grid-template-columns: 1fr;
   }
 }
