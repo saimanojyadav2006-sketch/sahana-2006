@@ -144,3 +144,9 @@ button:hover {
 .gallery img:hover {
   transform: scale(1.05);
 }
+@keyframes fall {
+  to {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
