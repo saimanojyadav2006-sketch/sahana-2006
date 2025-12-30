@@ -77,3 +77,6 @@ function moveSnow() {
 }
 
 setInterval(drawSnow, 33);
+function revealSecret() {
+  document.getElementById("secret").style.display = "block";
+}
