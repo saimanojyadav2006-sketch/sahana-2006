@@ -19,7 +19,7 @@
   <!-- Screen 1 -->
   <section class="screen active">
     <h1>Hey Sahana 👋</h1>
-    <p class="subtitle">Before 2026 begins, here’s something I wanted to share ✨</p>
+    <p class="subtitle">Before 2026 begins, here’s something special ✨</p>
     <button onclick="nextScreen()">LET’S GO</button>
   </section>
 
@@ -27,25 +27,27 @@
   <section class="screen">
     <h1>Vibes That Match You 🎧</h1>
     <div class="card">Soft mornings & late night talks</div>
+    <div class="card">Music that feels like home</div>
     <button onclick="nextScreen()">NEXT</button>
   </section>
 
-  <!-- Screen 3 -->
+  <!-- Screen 3 : HAPPY NEW YEAR -->
   <section class="screen night">
-    <h1>Happy New Year</h1>
+    <h1 class="ny-text">✨ Happy New Year ✨</h1>
     <h2 class="year">2026</h2>
+    <p class="subtitle glow">May this year bring peace, smiles & success 💫</p>
     <button onclick="nextScreen()">CONTINUE</button>
   </section>
 
-  <!-- Screen 4 -->
+  <!-- Screen 4 : PHOTOS -->
   <section class="screen">
     <h1>Some Memories 📸</h1>
 
-    <!-- PHOTOS -->
+    <!-- ONLINE PHOTOS (ALWAYS WORK) -->
     <div class="gallery">
-      <img src="photos/photo1.jpg" alt="Memory">
-      <img src="photos/photo2.jpg" alt="Memory">
-      <img src="photos/photo3.jpg" alt="Memory">
+      <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e">
+      <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e">
+      <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1">
     </div>
 
     <button onclick="nextScreen()">NEXT</button>
@@ -63,18 +65,12 @@
 
 </div>
 
-<!-- MUSIC -->
+<!-- MUSIC (CLICK TO PLAY – WORKS EVERYWHERE) -->
 <button id="musicBtn">🎵 Play Music</button>
 
 <audio id="bgm">
-  <source src="assets/bgm.mp3" type="audio/mpeg">
+  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_9c6b1dfc1f.mp3?filename=soft-piano-ambient-10697.mp3">
 </audio>
-
-<!-- Song fallback -->
-<a class="song" target="_blank"
-   href="https://www.youtube.com/results?search_query=dil+ka+jo+haal+hai">
-  🎧 Play Our Song
-</a>
 
 <script src="script.js"></script>
 </body>
