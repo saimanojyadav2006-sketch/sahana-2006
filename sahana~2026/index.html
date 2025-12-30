@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hey Sahana 💙</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Screen 1 -->
+  <section class="screen active">
+    <h1>Hey Sahana 👋</h1>
+    <p>Before 2026 begins, here’s something I wanted to share with you ✨</p>
+
+    <ul class="checklist">
+      <li>🌍 More adventures & memories</li>
+      <li>📚 Growth, learning & confidence</li>
+      <li>🧠 Peace of mind & good health</li>
+      <li>💙 Strong friendships that stay</li>
+    </ul>
+
+    <button onclick="nextScreen()">LET’S GO</button>
+  </section>
+
+  <!-- Screen 2 -->
+  <section class="screen">
+    <h1>Vibes That Match You 🎧</h1>
+    <p>Some calm, positive energy—just like you</p>
+
+    <div class="card">🎵 Soft mornings & late night talks</div>
+    <div class="card">🎵 Music that feels like home</div>
+
+    <button onclick="nextScreen()">NEXT</button>
+  </section>
+
+  <!-- Screen 3 -->
+  <section class="screen night">
+    <h1>✨ Happy New Year ✨</h1>
+    <h2 class="year">2026</h2>
+    <p>This one’s made just for you, Sahana 💫</p>
+
+    <button onclick="nextScreen()">CONTINUE</button>
+  </section>
+
+  <!-- Screen 4 -->
+  <section class="screen">
+    <h1>A Few Things I Want To Say 💌</h1>
+    <p>(Tap the cards)</p>
+
+    <div class="flip-card" onclick="flip(this)">
+      <div class="flip-inner">
+        <div class="front">Tap to flip</div>
+        <div class="back">
+          You have a way of making things feel lighter 🤍
+        </div>
+      </div>
+    </div>
+
+    <div class="flip-card" onclick="flip(this)">
+      <div class="flip-inner">
+        <div class="front">Tap to flip</div>
+        <div class="back">
+          Your presence genuinely makes days better ✨
+        </div>
+      </div>
+    </div>
+
+    <div class="flip-card" onclick="flip(this)">
+      <div class="flip-inner">
+        <div class="front">Tap to flip</div>
+        <div class="back">
+          I’m really glad I get to call you my friend 💙
+        </div>
+      </div>
+    </div>
+
+    <button onclick="nextScreen()">NEXT</button>
+  </section>
+
+  <!-- Screen 5 -->
+  <section class="screen">
+    <h1>One Last Note 🐱🎄</h1>
+    <p>
+      As 2026 begins,<br><br>
+      I hope life is kinder to you,<br>
+      brings you calm days,<br>
+      small wins,<br>
+      and moments you’ll smile back on ✨<br><br>
+      No matter where life goes,<br>
+      I’m glad our friendship exists 💙
+    </p>
+
+    <button onclick="alert('💙 Friendship sealed 💙')">
+      SEAL IT 🔒
+    </button>
+  </section>
+
+</div>
+
+<!-- Music Toggle -->
+<button id="musicBtn">🎵 Music OFF</button>
+<audio id="bgm" loop>
+  <source src="assets/bgm.mp3" type="audio/mpeg">
+</audio>
+
+<script src="script.js"></script>
+</body>
+</html>
