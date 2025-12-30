@@ -1,26 +1,20 @@
 let current = 0;
 const screens = document.querySelectorAll(".screen");
 
-/* Navigation */
 function nextScreen() {
   screens[current].classList.remove("active");
   current++;
-
   if (screens[current]) {
     screens[current].classList.add("active");
-
-    // Fireworks only on Happy New Year screen
     if (screens[current].classList.contains("night")) {
       startFireworks();
     }
   }
 }
 
-/* Music (click to play) */
+/* Music */
 const music = document.getElementById("bgm");
-document.getElementById("musicBtn").onclick = () => {
-  music.play();
-};
+document.getElementById("musicBtn").onclick = () => music.play();
 
 /* Snow */
 const canvas = document.getElementById("snow");
@@ -38,7 +32,6 @@ let snow = Array.from({ length: 100 }, () => ({
 setInterval(() => {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctx.fillStyle = "white";
-
   snow.forEach(f => {
     ctx.beginPath();
     ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2);
@@ -48,9 +41,8 @@ setInterval(() => {
   });
 }, 30);
 
-/* Fireworks (synced to 2026 slide) */
+/* Fireworks */
 let fireworksStarted = false;
-
 function startFireworks() {
   if (fireworksStarted) return;
   fireworksStarted = true;
@@ -68,13 +60,12 @@ function startFireworks() {
   function explode() {
     const x = Math.random() * fw.width;
     const y = Math.random() * fw.height / 2;
-
     for (let i = 0; i < 60; i++) {
       particles.push({
         x,
         y,
-        vx: Math.cos(i) * Math.random() * 3,
-        vy: Math.sin(i) * Math.random() * 3,
+        vx: (Math.random() - 0.5) * 6,
+        vy: (Math.random() - 0.5) * 6,
         life: 60
       });
     }
@@ -82,7 +73,6 @@ function startFireworks() {
 
   function animate() {
     fctx.clearRect(0, 0, fw.width, fw.height);
-
     particles.forEach((p, i) => {
       p.x += p.vx;
       p.y += p.vy;
@@ -91,15 +81,13 @@ function startFireworks() {
       fctx.fillRect(p.x, p.y, 2, 2);
       if (p.life <= 0) particles.splice(i, 1);
     });
-
     requestAnimationFrame(animate);
   }
 
-  setInterval(explode, 800);
+  setInterval(explode, 900);
   animate();
 }
 
-/* Final message */
 function celebrate() {
   alert("💙 Friendship sealed forever 💙");
 }
