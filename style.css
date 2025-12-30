@@ -7,17 +7,15 @@ body {
 
 h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 32px;
+  font-size: 34px;
 }
 
 .subtitle {
-  font-size: 18px;
+  font-size: 20px;
+  opacity: 0.9;
 }
 
-.container {
-  height: 100vh;
-}
-
+/* Screens */
 .screen {
   display: none;
   height: 100vh;
@@ -31,13 +29,19 @@ h1 {
   display: block;
 }
 
-.year {
-  font-size: 70px;
-  color: gold;
+/* Cards */
+.card {
+  background: white;
+  padding: 18px;
+  width: 80%;
+  margin: 15px auto;
+  border-radius: 14px;
+  font-size: 18px;
 }
 
+/* Buttons */
 button {
-  padding: 15px 35px;
+  padding: 16px 36px;
   font-size: 18px;
   border-radius: 30px;
   border: none;
@@ -47,38 +51,59 @@ button {
   margin-top: 30px;
 }
 
-.card {
-  background: white;
-  padding: 18px;
-  margin: 15px auto;
-  width: 85%;
-  font-size: 18px;
-  border-radius: 12px;
+/* HAPPY NEW YEAR */
+.night {
+  background: radial-gradient(circle at top, #1a2a6c, #000);
+  color: white;
 }
 
-/* PHOTO GALLERY */
+.ny-text {
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+.year {
+  font-size: 80px;
+  color: gold;
+  text-shadow: 0 0 25px gold;
+}
+
+.glow {
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  from { opacity: 0.6; }
+  to { opacity: 1; }
+}
+
+/* Gallery */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2,1fr);
   gap: 15px;
   margin-top: 20px;
 }
 
 .gallery img {
   width: 100%;
-  height: 180px;
+  height: 200px;
   object-fit: cover;
   border-radius: 16px;
-  background: #ccc;
 }
 
-/* SECRET */
+/* Secret */
 .secret {
-  font-size: 20px;
+  font-size: 22px;
   line-height: 1.6;
 }
 
-/* MUSIC */
+/* Music */
 #musicBtn {
   position: fixed;
   bottom: 20px;
@@ -87,20 +112,7 @@ button {
   z-index: 10;
 }
 
-.song {
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  font-size: 16px;
-}
-
-/* NIGHT */
-.night {
-  background: radial-gradient(circle at top, #1a2a6c, #000);
-  color: white;
-}
-
-/* SNOW */
+/* Snow canvas */
 #snow {
   position: fixed;
   inset: 0;
