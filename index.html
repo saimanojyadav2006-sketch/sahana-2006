@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hey Sahana 💙</title>
 
   <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
 </head>
@@ -21,62 +19,33 @@
   <!-- Screen 1 -->
   <section class="screen active">
     <h1>Hey Sahana 👋</h1>
-    <p class="subtitle">Before 2026 begins, here’s something I wanted to share with you ✨</p>
-
-    <ul class="checklist">
-      <li>🌍 More adventures & memories</li>
-      <li>📚 Growth, learning & confidence</li>
-      <li>🧠 Peace of mind & good health</li>
-      <li>💙 Strong friendships that stay</li>
-    </ul>
-
+    <p class="subtitle">Before 2026 begins, here’s something I wanted to share ✨</p>
     <button onclick="nextScreen()">LET’S GO</button>
   </section>
 
   <!-- Screen 2 -->
   <section class="screen">
     <h1>Vibes That Match You 🎧</h1>
-    <p class="subtitle">Some calm, positive energy — just like you</p>
-
-    <div class="card">🎵 Soft mornings & late night talks</div>
-    <div class="card">🎵 Music that feels like home</div>
-
+    <div class="card">Soft mornings & late night talks</div>
     <button onclick="nextScreen()">NEXT</button>
   </section>
 
   <!-- Screen 3 -->
   <section class="screen night">
-    <h1>✨ Happy New Year ✨</h1>
+    <h1>Happy New Year</h1>
     <h2 class="year">2026</h2>
-    <p class="subtitle">This one’s made just for you, Sahana 💫</p>
-
     <button onclick="nextScreen()">CONTINUE</button>
   </section>
 
   <!-- Screen 4 -->
   <section class="screen">
-    <h1>A Few Things I Want To Say 💌</h1>
-    <p class="subtitle">(Tap the cards)</p>
+    <h1>Some Memories 📸</h1>
 
-    <div class="flip-card" onclick="flip(this)">
-      <div class="flip-inner">
-        <div class="front">Tap</div>
-        <div class="back">You make moments feel lighter 🤍</div>
-      </div>
-    </div>
-
-    <div class="flip-card" onclick="flip(this)">
-      <div class="flip-inner">
-        <div class="front">Tap</div>
-        <div class="back">Your presence makes days better ✨</div>
-      </div>
-    </div>
-
-    <div class="flip-card" onclick="flip(this)">
-      <div class="flip-inner">
-        <div class="front">Tap</div>
-        <div class="back">I’m grateful to call you my friend 💙</div>
-      </div>
+    <!-- PHOTOS -->
+    <div class="gallery">
+      <img src="photos/photo1.jpg" alt="Memory">
+      <img src="photos/photo2.jpg" alt="Memory">
+      <img src="photos/photo3.jpg" alt="Memory">
     </div>
 
     <button onclick="nextScreen()">NEXT</button>
@@ -84,40 +53,26 @@
 
   <!-- Screen 5 -->
   <section class="screen">
-    <h1>Some Memories 📸</h1>
-    <p class="subtitle">Moments I’m really glad we shared</p>
-
-    <div class="gallery">
-      <img src="photos/photo1.jpg">
-      <img src="photos/photo2.jpg">
-      <img src="photos/photo3.jpg">
-    </div>
-
-    <button onclick="nextScreen()">NEXT</button>
-  </section>
-
-  <!-- Screen 6 -->
-  <section class="screen">
-    <h1>One Last Note 🤍</h1>
-
+    <h1>One Last Note 💙</h1>
     <p class="secret">
       Sahana, even if I found a thousand friends,<br>
-      none could ever be you 💙
+      none could ever be you.
     </p>
-
     <button onclick="celebrate()">SEAL IT 🔒</button>
   </section>
 
 </div>
 
-<!-- Music -->
-<button id="musicBtn">🎵 Music OFF</button>
+<!-- MUSIC -->
+<button id="musicBtn">🎵 Play Music</button>
 
-<audio id="bgm" loop>
+<audio id="bgm">
   <source src="assets/bgm.mp3" type="audio/mpeg">
 </audio>
 
-<a class="song" href="https://www.youtube.com/results?search_query=dil+ka+jo+haal+hai" target="_blank">
+<!-- Song fallback -->
+<a class="song" target="_blank"
+   href="https://www.youtube.com/results?search_query=dil+ka+jo+haal+hai">
   🎧 Play Our Song
 </a>
 
