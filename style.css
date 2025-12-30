@@ -5,6 +5,7 @@ body {
   overflow: hidden;
 }
 
+/* Headings */
 h1 {
   font-family: 'Playfair Display', serif;
   font-size: 34px;
@@ -16,6 +17,10 @@ h1 {
 }
 
 /* Screens */
+.container {
+  height: 100vh;
+}
+
 .screen {
   display: none;
   height: 100vh;
@@ -23,20 +28,11 @@ h1 {
   text-align: center;
   position: relative;
   z-index: 2;
+  animation: fadeIn 0.8s ease;
 }
 
 .screen.active {
   display: block;
-}
-
-/* Cards */
-.card {
-  background: white;
-  padding: 18px;
-  width: 80%;
-  margin: 15px auto;
-  border-radius: 14px;
-  font-size: 18px;
 }
 
 /* Buttons */
@@ -49,9 +45,24 @@ button {
   color: white;
   cursor: pointer;
   margin-top: 30px;
+  transition: transform 0.2s ease;
 }
 
-/* HAPPY NEW YEAR */
+button:hover {
+  transform: scale(1.08);
+}
+
+/* Cards */
+.card {
+  background: white;
+  padding: 18px;
+  width: 80%;
+  margin: 15px auto;
+  border-radius: 14px;
+  font-size: 18px;
+}
+
+/* Happy New Year */
 .night {
   background: radial-gradient(circle at top, #1a2a6c, #000);
   color: white;
@@ -85,7 +96,7 @@ button {
 /* Gallery */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(2,1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 15px;
   margin-top: 20px;
 }
@@ -103,7 +114,7 @@ button {
   line-height: 1.6;
 }
 
-/* Music */
+/* Music Button */
 #musicBtn {
   position: fixed;
   bottom: 20px;
@@ -112,9 +123,17 @@ button {
   z-index: 10;
 }
 
-/* Snow canvas */
-#snow {
+/* Snow & Fireworks */
+#snow,
+#fireworks {
   position: fixed;
   inset: 0;
+  pointer-events: none;
   z-index: -1;
+}
+
+/* Fade animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
