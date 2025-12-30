@@ -2,23 +2,18 @@ let current = 0;
 const screens = document.querySelectorAll(".screen");
 
 function nextScreen() {
-  if (current >= screens.length - 1) return;
   screens[current].classList.remove("active");
   current++;
-  screens[current].classList.add("active");
+  if (screens[current]) screens[current].classList.add("active");
 }
 
-/* MUSIC */
+/* MUSIC (CLICK TO PLAY) */
 const music = document.getElementById("bgm");
-const btn = document.getElementById("musicBtn");
-
-btn.onclick = () => {
-  music.play().catch(() => {
-    alert("Upload bgm.mp3 inside assets folder");
-  });
+document.getElementById("musicBtn").onclick = () => {
+  music.play();
 };
 
-/* SNOW */
+/* SNOW EFFECT */
 const canvas = document.getElementById("snow");
 const ctx = canvas.getContext("2d");
 
@@ -43,7 +38,7 @@ setInterval(() => {
   });
 }, 30);
 
-/* CONFETTI */
+/* CONFETTI / FINAL MESSAGE */
 function celebrate() {
   alert("💙 Friendship sealed forever 💙");
 }
