@@ -8,6 +8,8 @@
 </head>
 <body>
 
+<canvas id="snow"></canvas>
+
 <div class="container">
 
   <!-- Screen 1 -->
@@ -53,27 +55,21 @@
     <div class="flip-card" onclick="flip(this)">
       <div class="flip-inner">
         <div class="front">Tap to flip</div>
-        <div class="back">
-          You have a way of making things feel lighter 🤍
-        </div>
+        <div class="back">You have a way of making things feel lighter 🤍</div>
       </div>
     </div>
 
     <div class="flip-card" onclick="flip(this)">
       <div class="flip-inner">
         <div class="front">Tap to flip</div>
-        <div class="back">
-          Your presence genuinely makes days better ✨
-        </div>
+        <div class="back">Your presence genuinely makes days better ✨</div>
       </div>
     </div>
 
     <div class="flip-card" onclick="flip(this)">
       <div class="flip-inner">
         <div class="front">Tap to flip</div>
-        <div class="back">
-          I’m really glad I get to call you my friend 💙
-        </div>
+        <div class="back">I’m really glad I get to call you my friend 💙</div>
       </div>
     </div>
 
@@ -92,39 +88,50 @@
       No matter where life goes,<br>
       I’m glad our friendship exists 💙
     </p>
-    <button onclick="celebrate()">SEAL IT 🔒</button>
 
-   </section>
+    <button onclick="celebrate()">SEAL IT 🔒</button>
+  </section>
+
+  <!-- Screen 6: Photo Gallery -->
+  <section class="screen">
+    <h1>Some Memories 📸</h1>
+    <p>Moments I’m really glad we shared 💙</p>
+
+    <div class="gallery">
+      <img src="photos/photo1.jpg" alt="Memory 1">
+      <img src="photos/photo2.jpg" alt="Memory 2">
+      <img src="photos/photo3.jpg" alt="Memory 3">
+    </div>
+
+    <button onclick="nextScreen()">NEXT</button>
+  </section>
+
+  <!-- Screen 7: Secret Message -->
+  <section class="screen">
+    <h1>Just One More Thing 🤍</h1>
+
+    <p id="secret" style="display:none;">
+      Sahana, even if I found a thousand friends,<br>
+      none could ever be you 💙
+    </p>
+
+    <button onclick="revealSecret()">Tap for a surprise 🤍</button>
+  </section>
 
 </div>
-  <section class="screen">
-  <h1>Some Memories 📸</h1>
-  <p>Moments I’m really glad we shared 💙</p>
 
-  <div class="gallery">
-    <img src="photos/photo1.jpg" alt="Memory 1">
-    <img src="photos/photo2.jpg" alt="Memory 2">
-    <img src="photos/photo3.jpg" alt="Memory 3">
-  </div>
-
-  <button onclick="nextScreen()">NEXT</button>
-</section>
-  <p id="secret" style="display:none;">
-Sahana, even if i found a thousand of friends non could ever be youu💙
-</p>
-
-<button onclick="revealSecret()">Tap for a surprise 🤍</button>
-
-<!-- Music Toggle -->
+<!-- Music -->
 <button id="musicBtn">🎵 Music OFF</button>
+
 <audio id="bgm" loop>
   <source src="assets/bgm.mp3" type="audio/mpeg">
 </audio>
+
 <a href="https://www.youtube.com/results?search_query=dil+ka+jo+haal+hai"
    target="_blank">
   <button>🎧 Play Our Song</button>
 </a>
+
 <script src="script.js"></script>
 </body>
-  <canvas id="snow"></canvas>
 </html>
