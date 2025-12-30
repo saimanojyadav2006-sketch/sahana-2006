@@ -80,3 +80,18 @@ setInterval(drawSnow, 33);
 function revealSecret() {
   document.getElementById("secret").style.display = "block";
 }
+function celebrate() {
+  for (let i = 0; i < 100; i++) {
+    const confetti = document.createElement("div");
+    confetti.style.position = "fixed";
+    confetti.style.left = Math.random() * 100 + "vw";
+    confetti.style.top = "-10px";
+    confetti.style.width = "8px";
+    confetti.style.height = "8px";
+    confetti.style.background = ["#ff4d4d", "#ffd700", "#4da6ff"][Math.floor(Math.random()*3)];
+    confetti.style.animation = "fall 2s linear";
+    document.body.appendChild(confetti);
+    setTimeout(() => confetti.remove(), 2000);
+  }
+  alert("💙 Friendship sealed forever 💙");
+}
