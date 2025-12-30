@@ -12,6 +12,7 @@
 </head>
 <body>
 
+<!-- Snow -->
 <canvas id="snow"></canvas>
 
 <div class="container">
@@ -35,25 +36,25 @@
   <section class="screen night">
     <h1 class="ny-text">✨ Happy New Year ✨</h1>
     <h2 class="year">2026</h2>
-    <p class="subtitle glow">May this year bring peace, smiles & success 💫</p>
+    <p class="subtitle glow">May this year bring you peace & smiles 💫</p>
     <button onclick="nextScreen()">CONTINUE</button>
   </section>
 
-  <!-- Screen 4 : PHOTOS -->
+  <!-- Screen 4 : PHOTOS (YOUR SELECTED IMAGES) -->
   <section class="screen">
     <h1>Some Memories 📸</h1>
+    <p class="subtitle">Moments I’ll always remember 💙</p>
 
-    <!-- ONLINE PHOTOS (ALWAYS WORK) -->
     <div class="gallery">
-      <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e">
-      <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e">
-      <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1">
+      <img src="photos/photo1.jpg" alt="Memory 1">
+      <img src="photos/photo2.jpg" alt="Memory 2">
+      <img src="photos/photo3.jpg" alt="Memory 3">
     </div>
 
     <button onclick="nextScreen()">NEXT</button>
   </section>
 
-  <!-- Screen 5 -->
+  <!-- Screen 5 : FINAL MESSAGE -->
   <section class="screen">
     <h1>One Last Note 💙</h1>
     <p class="secret">
@@ -65,7 +66,7 @@
 
 </div>
 
-<!-- MUSIC (CLICK TO PLAY – WORKS EVERYWHERE) -->
+<!-- Music -->
 <button id="musicBtn">🎵 Play Music</button>
 
 <audio id="bgm">
